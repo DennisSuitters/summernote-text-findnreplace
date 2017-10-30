@@ -1,3 +1,4 @@
+/* https://github.com/DiemenDesign/summernote-text-findnreplace */
 (function(factory){
   if(typeof define==='function'&&define.amd){
     define(['jquery'],factory);
@@ -49,18 +50,8 @@
       });
       this.initialize=function(){
         var $container=options.dialogsInBody?$(document.body):$editor;
-        var body='<div class="form-group">'+
-              '<label for="note-findnreplace-title" class="control-label col-xs-2">'+lang.findnreplace.find+'</label>'+
-              '<div class="input-group col-xs-10">'+
-                '<input type="text" id="note-findnreplace-find" class="form-control note-findnreplace-find">'+
-              '</div>'+
-            '</div>'+
-            '<div class="form-group">'+
-              '<label for="note-findnreplace-replace" class="control-label col-xs-2">'+lang.findnreplace.replace+'</label>'+
-              '<div class="input-group col-xs-10">'+
-                '<input type="text" id="note-findnreplace-replace" class="form-control note-findnreplace-replace" onchange="$(\'.note-findnreplace-btn\').text(\''+lang.findnreplace.replaceBtn+'\')">'+
-              '</div>'+
-            '</div>';
+        var body='<div class="form-group"><label for="note-findnreplace-title" class="control-label col-xs-2">'+lang.findnreplace.find+'</label><div class="input-group col-xs-10"><input type="text" id="note-findnreplace-find" class="form-control note-findnreplace-find"></div></div>'+
+        '<div class="form-group"><label for="note-findnreplace-replace" class="control-label col-xs-2">'+lang.findnreplace.replace+'</label><div class="input-group col-xs-10"><input type="text" id="note-findnreplace-replace" class="form-control note-findnreplace-replace" onchange="$(\'.note-findnreplace-btn\').text(\''+lang.findnreplace.replaceBtn+'\')"></div></div>';
         this.$dialog=ui.dialog({
           title:lang.findnreplace.dialogTitle,
           body:body,
