@@ -29,6 +29,7 @@
       var $note=context.layoutInfo.note;
       var $editor=context.layoutInfo.editor;
       var $editable=context.layoutInfo.editable;
+      var $toolbar = context.layoutInfo.toolbar;
       var options=context.options;
       var lang=options.langInfo;
       context.memo('button.findnreplace',function(){
@@ -68,14 +69,15 @@
           '</div>'+
         '</div>';
         $('.note-toolbar').append(findnreplaceContent);
+        this.show();
       };
       this.findnreplace=function(){
-        var $findBtn=self.find('.note-findnreplace-find-btn');
-        var $replaceBtn=self.find('.note-findnreplace-replace-btn');
+        var $findBtn=$toolbar.find(‘.note-findnreplace-find-btn’);
+        var $replaceBtn=$toolbar.find(‘.note-findnreplace-replace-btn’);
         $findBtn.click(function(e){
           e.preventDefault();
           alert('Find Clicked');
-          var text=$note.summernote().text();
+          var text=$editable.text();
           var findText=$('.note-findnreplace-find"').val();
           var replaceText=$('.note-findnreplace-replace').val();
           if(findText!=''){
