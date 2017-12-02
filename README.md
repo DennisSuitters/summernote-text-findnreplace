@@ -8,7 +8,7 @@ Here are the functions you can do with this plugin:
 - Selecting text before opening the findNReplace plugin will copy the selected text into the find field.
 - Selecting text after optening the findNReplace plugin will replace the selection with text entered in the replace field.
 
-![summernote-text-findnreplace](summernote-findnreplace.png)
+![summernote-text-findnreplace](summernote-text-findnreplace.png)
 
 ### Installation
 
