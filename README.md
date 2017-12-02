@@ -1,7 +1,12 @@
 # summernote-text-findnreplace
 A plugin for the [Summernote](https://github.com/summernote/summernote/) WYSIWYG editor.
 
-Adds a button to the Toolbar that opens a Modal that allows Find and Replace text in the editor.
+Adds a button to the Toolbar that adds an area to the Toolbar that allows Find and Replace text in the editor.
+
+Here are the functions you can do with this plugin:
+- Find text which the results are highlighted with a notification of how many instances were found.
+- Selecting text before opening the findNReplace plugin will copy the selected text into the find field.
+- Selecting text after optening the findNReplace plugin will replace the selection with text entered in the replace field.
 
 ### Installation
 
