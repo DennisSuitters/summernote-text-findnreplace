@@ -1,12 +1,12 @@
-(function(factory) {
-  if(typeof define === 'function' && define.amd) {
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory);
   } else if (typeof module === 'object' && module.exports) {
     module.exports = factory(require('jquery'));
   } else {
     factory(window.jQuery);
   }
-}(function($) {
+}(function ($) {
   $.extend(true,$.summernote.lang, {
     'en-US': { /* English */
       findnreplace: {
@@ -30,18 +30,18 @@
     }
   });
   $.extend($.summernote.plugins, {
-    'findnreplace':function(context) {
+    'findnreplace': function (context) {
       var ui       = $.summernote.ui;
       var $note    = context.layoutInfo.note;
       var $editor  = context.layoutInfo.editor;
       var $toolbar = context.layoutInfo.toolbar;
       var options  = context.options;
       var lang     = options.langInfo;
-      context.memo('button.findnreplace',function() {
+      context.memo('button.findnreplace', function() {
         var button = ui.button({
           contents: options.findnreplace.icon,
           tooltip:  lang.findnreplace.tooltip,
-          click:function(e) {
+          click: function (e) {
             e.preventDefault();
             $editor.find('.note-findnreplace').contents().unwrap('u');
             $('#findnreplaceToolbar').toggleClass('hidden');
@@ -54,7 +54,7 @@
         });
         return button.render();
       });
-      this.initialize = function() {
+      this.initialize = function () {
         var fnrBody =
         '<div id="findnreplaceToolbar" class="note-toolbar-wrapper panel-heading hidden">' +
           '<small id="findnreplace-info" class="help-block small">&nbsp;</small>' +
@@ -79,7 +79,7 @@
       this.findnreplace = function() {
         var $fnrFindBtn    = $toolbar.find('.note-findnreplace-find-btn');
         var $fnrReplaceBtn = $toolbar.find('.note-findnreplace-replace-btn');
-        $fnrFindBtn.click(function(e) {
+        $fnrFindBtn.click(function (e) {
           e.preventDefault();
           $editor.find('.note-findnreplace').contents().unwrap('u');
           var fnrCode    = context.invoke('code');
@@ -93,7 +93,7 @@
           } else
             $('#findnreplace-info').html('<span class="text-danger">' + lang.findnreplace.findError + '</span>');
         });
-        $fnrReplaceBtn.click(function(e) {
+        $fnrReplaceBtn.click(function (e) {
           e.preventDefault();
           $editor.find('.note-findnreplace').contents().unwrap('u');
           var fnrCode    = context.invoke('code');
@@ -102,11 +102,11 @@
           var fnrCount   = (fnrCode.match(new RegExp(fnrFind, "gi")) || []).length
           if (fnrFind) {
             $('#findnreplace-info').text(fnrCount + lang.findnreplace.findResult + "`" + fnrFind + "`" + lang.findnreplace.replaceResult +"`" + fnrReplace + "`");
-            var fnrReplaced = fnrCode.replace(new RegExp(fnrFind,"gi"),fnrReplace);
-            $note.summernote('code',fnrReplaced);
+            var fnrReplaced = fnrCode.replace(new RegExp(fnrFind, "gi"), fnrReplace);
+            $note.summernote('code', fnrReplaced);
           } else {
             if (fnrReplace) {
-              if($note.summernote('createRange').toString()){
+              if ($note.summernote('createRange').toString()) {
                 $note.summernote('insertText',fnrReplace);
                 $('#findnreplace-info').text('');
               } else
