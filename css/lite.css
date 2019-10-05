@@ -1,0 +1,10 @@
+.note-toolbar-wrapper{padding-top:20px}
+.hidden{display:none;}
+.form-group{margin-bottom:1rem}
+.input-group{position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:stretch;align-items:stretch;width:100%}
+.form-control{display:block;width:100%;height:calc(1.5em + .75rem + 2px);padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#495057;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;border-radius:.25rem;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out}
+.input-group-append{display:-ms-flexbox;display:flex}
+.input-group-append .btn{position:relative;z-index:2}
+.input-group-append .btn:focus{z-index:3}
+.input-group-append{margin-left:-1px}
+.text-danger{color:#dc3545!important}

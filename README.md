@@ -19,10 +19,12 @@ Include the following code after including Summernote:
 
 ```html
 <script src="summernote-text-findnreplace.js"></script>
+<script src="lang/[language-COUNTRY].js"></script>
 ```
 
 #### 2. Supported languages
-Currently available in English!
+
+Supported languages can be found in the `lang` folder, and should be included after the plugin, then setting the chosen language when initialising Summernote.
 
 #### 3. Summernote options
 Finally, customize the Summernote Toolbar.
@@ -42,7 +44,10 @@ $(document).ready(function() {
       ['insert',['media','link','hr']],
       ['view',['fullscreen','codeview']],
       ['help',['help']]
-    ]
+    ],
+    findnreplace:{
+      lang: 'en-US' // Change to your chosen language
+    }
   });
 });
 ```
