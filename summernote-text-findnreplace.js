@@ -51,7 +51,7 @@
           placement: options.placement,
           click: function (e) {
             e.preventDefault();
-            $editor.find('.note-findnreplace').contents().unwrap('u');
+            $editor.find('.note-findnreplace').contents().unwrap('mark');
             $('#findnreplaceToolbar').toggleClass(options.findnreplace.classHidden);
             $('.note-status-output').text('');
             if ($note.summernote('createRange').toString()) {
