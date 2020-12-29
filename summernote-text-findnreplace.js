@@ -46,13 +46,14 @@
       context.memo('button.findnreplace', function() {
         var button = ui.button({
           contents: options.findnreplace.icon,
+          container: options.container,
           tooltip:  lang.findnreplace.tooltip,
-          container: 'body',
+          placement: options.placement,
           click: function (e) {
             e.preventDefault();
             $editor.find('.note-findnreplace').contents().unwrap('u');
             $('#findnreplaceToolbar').toggleClass(options.findnreplace.classHidden);
-            $('#findnreplace-info').text('');
+            $('.note-status-output').text('');
             if ($note.summernote('createRange').toString()) {
               var selected = $note.summernote('createRange').toString();
               $('#note-findnreplace-find').val(selected);
@@ -77,8 +78,8 @@
         this.show();
       };
       this.findnreplace = function() {
-        var $fnrFindBtn    = $toolbar.find('.note-findnreplace-find-btn');
-        var $fnrReplaceBtn = $toolbar.find('.note-findnreplace-replace-btn');
+        var $fnrFindBtn    = $('.note-findnreplace-find-btn');
+        var $fnrReplaceBtn = $('.note-findnreplace-replace-btn');
         $fnrFindBtn.click(function (e) {
           e.preventDefault();
           $editor.find('.note-findnreplace').contents().unwrap('mark');
